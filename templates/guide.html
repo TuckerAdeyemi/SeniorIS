@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galaxy Guide - Galaxy Classifier</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        header {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 15px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        nav a:hover {
+            background-color: #667eea;
+        }
+        nav a.active {
+            background-color: #667eea;
+            border-bottom: 3px solid #fff;
+        }
+        header h1 {
+            color: white;
+            margin-bottom: 10px;
+        }
+        .content {
+            padding: 40px 20px;
+            min-height: calc(100vh - 150px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .gallery-container {
+            max-width: 1000px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .galaxy-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+        .galaxy-card h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        .galaxy-card p {
+            color: #666;
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🌌 Galaxy Classifier</h1>
+        <nav>
+            <a href="/">Classifier</a>
+            <a href="/guide" class="active">Galaxy Guide</a>
+        </nav>
+    </header>
+
+    <div class="content">
+    <div class="gallery-container">
+        <div class="galaxy-card">
+            <h3>Elliptical Galaxies</h3>
+            <img src="{{ url_for('static', filename='smooth noodd/588676.jpg') }}" alt="Elliptical Galaxy Diagram" style="float: right; margin-left: 10px; width: 280px;">
+            <p>
+                These galaxies are shaped like elongated spheres or "ellipsoids." They contain older stars and very little gas or dust. 
+                <strong>Standard (E0-E7):</strong> These follow a smooth, featureless light profile, ranging from perfectly circular to highly elongated. 
+                <strong>With Oddities:</strong> Some exhibit "peculiar" features, such as shells, ripples, or dual nuclei, often caused by the recent gravitational absorption of a smaller galaxy.
+            </p>
+        </div>
+
+        <div class="galaxy-card">
+            <h3>Spiral Galaxies</h3>
+            <img src="{{ url_for('static', filename='featuresdiscnobulge/770216.jpg') }}" alt="Spiral Galaxy Diagram" style="float: right; margin-left: 30px; width: 280px;">
+            <p>
+                Characterized by a rotating disc with "arms" of stars and gas. 
+                <strong>Central Bulge:</strong> The classic spiral  features a dense, spherical group of old stars at the center. 
+                <strong>Without Bulge (Pure-Disk):</strong> Also known as "late-type" spirals, these lack a prominent central cluster, consisting almost entirely of a thin disk. 
+                <strong>With Oddities:</strong> These include "flocculent" spirals with patchy, discontinuous arms or "barred" spirals where arms emerge from a straight bar of stars rather than the core.
+            </p>
+        </div>
+
+        <div class="galaxy-card">
+            <h3>Irregular Galaxies</h3>
+            <p>
+                These galaxies lack a distinct regular shape, like a spiral or an elliptical. They are often chaotic in appearance, rich in gas and dust, and are hotbeds for new star formation. They are frequently the result of galactic collisions or near-misses that rip apart more organized structures.
+            </p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

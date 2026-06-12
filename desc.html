@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Description Page</title>
+
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background: #111;
+			color: white;
+			text-align: center;
+			padding: 20px;
+		}
+
+		.tabs {
+			display: flex;
+			justify-content: center;
+			gap: 10px;
+			margin-bottom: 20px;
+		}
+
+		.tab-btn {
+			padding: 10px 20px;
+			border: none;
+			background: #333;
+			color: white;
+			cursor: pointer;
+			border-radius: 5px;
+			font-size: 16px;
+		}
+
+		.tab-btn.active {
+			background: #00bfff;
+		}
+
+		.tab-content {
+			display: none;
+		}
+
+		.tab-content.active {
+			display: block;
+		}
+
+		img {
+			max-width: 400px;
+			border-radius: 10px;
+			margin-top: 10px;
+		}
+	</style>
+</head>
+<body>
+
+	<h1>Tabbed Gallery Page</h1>
+
+	<div class="tabs">
+		<button class="tab-btn active" onclick="openTab(0)">Tab 1</button>
+		<button class="tab-btn" onclick="openTab(1)">Tab 2</button>
+		<button class="tab-btn" onclick="openTab(2)">Tab 3</button>
+	</div>
+
+	<div id="tab0" class="tab-content active">
+		<h2>Elliptical Galaxy</h2>
+		<p>An elliptical galaxy is a type of galaxy. They are generally formed by mergers of different galaxies. 
+            In the early universe, smaller proto galaxies are attracted to each other via gravitational attraction. 
+            Upon collision, a loss of order is experienced within the galaxy, causing a large blob like structure to form. 
+            This can also occur with 2 spiral galaxies merging and colliding with each other.</p>
+		<img src="images (6).jpeg">
+	</div>
+
+	<div id="tab1" class="tab-content">
+		<h2>Spiral Galaxy</h2>
+		<p>A spiral galaxy is a type of galaxy.  Starting with a rotating cloud of gas, gravity forces it to collapse into a rotating disk. 
+            Gas starts to climb up in the center, causing a prominent bulge surrounded by the thin rotating disk. 
+            Density waves cause the gas in the arms to climb up and form bright blue stars, giving the arms it bright blue look, 
+            where the center of the galaxy is reddish yellow, filled with the oldest stars in the galaxy. 
+            The galaxy we reside in, known as the Milky Way Galaxy, is a spiral galaxy.</p>
+		<img src="Hubble2005-01-barred-spiral-galaxy-NGC1300.jpg">
+	</div>
+
+	<div id="tab2" class="tab-content">
+		<h2>Irregular Galaxy</h2>
+		<p>An irregular galaxy is a type of galaxy. They consist of galaxies that have an irregular shape. 
+            This could be caused for multiple reasons. One is the galaxy being to small to form any actual shape. 
+            Spiral arms need strong gravity and organized rotation. Another cause is galaxy mergers, where when one galaxy passes by another, 
+            or even collide, the gravity between the two galaxies can cause deformties in the shape, like the large and small magellanic clouds near the Milky Way.</p>
+		<img src="images.jpeg">
+	</div>
+
+	<script>
+		function openTab(index) {
+			let tabs = document.querySelectorAll(".tab-content");
+			let buttons = document.querySelectorAll(".tab-btn");
+
+			for (let i = 0; i < tabs.length; i++) {
+				tabs[i].classList.remove("active");
+				buttons[i].classList.remove("active");
+			}
+
+			document.getElementById("tab" + index).classList.add("active");
+			buttons[index].classList.add("active");
+		}
+	</script>
+
+</body>
+</html>
